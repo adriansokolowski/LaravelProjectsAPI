@@ -31,6 +31,6 @@ Route::get('project/findByStatus', [ProjectController::class, 'findByStatus'])->
 // Find project by ID
 Route::get('project/{projectId}', [ProjectController::class, 'findById']);
 // Updates a project with form data
-Route::post('project/{$projectId}', [ProjectController::class, 'project']);
+Route::post('project/{projectId}', [ProjectController::class, 'project']);
 // Deletes a project
-Route::delete('project/{$projectId}', [ProjectController::class, 'destroy']);
+Route::delete('project/{projectId}', [ProjectController::class, 'destroy']);

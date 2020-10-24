@@ -36,7 +36,12 @@ class ProjectController extends Controller
 
     public function findById(Project $projectId)
     {
-
         return new FindByIdResource($projectId);
     }
+
+    public function destroy(Project $projectId)
+    {
+        $projectId->delete();
+    }
+
 }
