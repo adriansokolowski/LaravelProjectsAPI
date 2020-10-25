@@ -27,9 +27,9 @@ class RewardRequest extends FormRequest
     {
         return [
             'project_id' => 'required|integer',
-            'name' => 'required',
-            'description' => 'required',
-            'amount' => 'required',
+            'name' => 'required|string',
+            'description' => 'required|string',
+            'amount' => 'required|numeric',
         ];
     }
 

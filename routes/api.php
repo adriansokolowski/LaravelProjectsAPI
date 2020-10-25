@@ -21,9 +21,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 // Add a new reward
-Route::post('reward', [RewardController::class, 'reward'])->name('reward.store');
+Route::post('reward', [RewardController::class, 'store'])->name('reward.store');
 // Add a new project
-Route::post('project', [ProjectController::class, 'project'])->name('project.store');
+Route::post('project', [ProjectController::class, 'store'])->name('project.store');
 // Update an existing project
 Route::put('project', [ProjectController::class, 'updateExisting'])->name('project.updateexisting');
 // Find projects by status
@@ -31,6 +31,6 @@ Route::get('project/findByStatus', [ProjectController::class, 'findByStatus'])->
 // Find project by ID
 Route::get('project/{projectId}', [ProjectController::class, 'findById'])->name('project.findbyid');
 // Updates a project with form data
-Route::post('project/{projectId}', [ProjectController::class, 'project']);
+Route::post('project/{projectId}', [ProjectController::class, 'updateProject']);
 // Deletes a project
 Route::delete('project/{projectId}', [ProjectController::class, 'destroy'])->name('project.destroy');

@@ -17,7 +17,7 @@ class ProjectController extends Controller
     public function store(ProjectRequest $request)
     {
         $data = $request->all();
-        $project = Project::create($data);
+        Project::create($data);
     }
 
     public function updateExisting(ProjectRequest $request)
@@ -37,6 +37,13 @@ class ProjectController extends Controller
     public function findById(Project $projectId)
     {
         return new FindByIdResource($projectId);
+    }
+
+    public function updateProject(Project $projectId, ProjectRequest $request)
+    {
+        $data = $request->all();
+        $project = Project::find($projectId->id);
+        $project->update($data);
     }
 
     public function destroy(Project $projectId)
