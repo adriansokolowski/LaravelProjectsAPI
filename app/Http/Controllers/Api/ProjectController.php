@@ -14,7 +14,7 @@ use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
-    public function project(ProjectRequest $request)
+    public function store(ProjectRequest $request)
     {
         $data = $request->all();
         $project = Project::create($data);
@@ -29,7 +29,7 @@ class ProjectController extends Controller
 
     public function findByStatus(FindbystatusRequest $request)
     {
-        $data = Project::where('status', $request->status)->paginate(20);
+        $data = Project::whereIn('status', $request->status)->paginate(20);
 
         return FindByStatusResource::collection($data);
     }

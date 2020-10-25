@@ -15,7 +15,7 @@ class CreateRewardsTable extends Migration
     {
         Schema::create('rewards', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('project_id');
+            $table->foreignId('project_id')->constrained()->onDelete('cascade');
             $table->string('name');
             $table->text('description');
             $table->float('amount');

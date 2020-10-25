@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class RewardController extends Controller
 {
-    public function reward(RewardRequest $request)
+    public function store(RewardRequest $request)
     {
         $data = $request->all();
         $reward = Reward::create($data);
